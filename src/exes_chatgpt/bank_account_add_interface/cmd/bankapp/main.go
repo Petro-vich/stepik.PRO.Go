@@ -8,6 +8,7 @@ import (
 
 func main() {
 	var acc bankiface.BankAccount = account.NewAccount("Оля")
+	var bonusAcc bankiface.BankAccount = account.NewBonusAccount("Иван", 6.7)
 
 	if err := acc.Deposit(2000); err != nil {
 		fmt.Println("Ошибка пополнения:", err)
@@ -20,5 +21,14 @@ func main() {
 
 	if err := acc.Withdraw(800); err == nil {
 		fmt.Printf("Снятие успешно. Новый баланс: %.2f₽\n", acc.GetBalance())
+	} else {
+		fmt.Printf("Не достаточно средстав. Ваш баланс: %.2f\n", acc.GetBalance())
 	}
+
+	if err := bonusAcc.Deposit(500); err != nil {
+		fmt.Println(err)
+	} else {
+		fmt.Printf("Пополнение успешно, ваш счет: %.2f\n", bonusAcc.GetBalance())
+	}
+
 }
