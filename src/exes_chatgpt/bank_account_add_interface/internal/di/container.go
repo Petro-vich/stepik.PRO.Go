@@ -1,7 +1,7 @@
 package di
 
 import (
-	"github.com/Petro-vich/stepik.PRO.Go/src/exes_chatgpt/bank_account_add_interface/intrental/repository"
+	"github.com/Petro-vich/stepik.PRO.Go/src/exes_chatgpt/bank_account_add_interface/internal/repository"
 	"log"
 	"os"
 )
